@@ -64,10 +64,13 @@ const images = [
         },
 ];
 
+
+
 let activeLightbox = null;
 
 function openModal(imageSrc) {
   const modalContent = `<img src="${imageSrc}" width="1112" height="640" />`;
+
   activeLightbox = basicLightbox.create(modalContent, {
     onShow: (instance) => {
       document.addEventListener("keydown", handleKeyDown);
@@ -112,8 +115,11 @@ galleryContainer.addEventListener("click", handleGalleryClick);
 
 function handleGalleryClick(event) {
   event.preventDefault();
-  if (event.target.classList.contains("gallery-image")) {
-    const largeImageSrc = event.target.getAttribute("data-source");
+  const clickedImage = event.target.closest(".gallery-image");
+
+  if (clickedImage) {
+    const largeImageSrc = clickedImage.getAttribute("data-source");
     openModal(largeImageSrc);
   }
 }
+

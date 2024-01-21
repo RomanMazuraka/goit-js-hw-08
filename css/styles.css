@@ -23,12 +23,5 @@
   display: block;
   width: 100%;
   height: auto;
-  background: url(<path-to-image>),
-    lightgray -76px -16.297px / 125.278% 150.297% no-repeat;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: rgba(46, 47, 66, 0.8);
 }
